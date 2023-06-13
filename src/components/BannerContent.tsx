@@ -1,5 +1,5 @@
 import { BsFillPlayCircleFill } from "react-icons/bs";
-import { Movie, fetchGenres, getGenreNames } from "../utils";
+import { Movie, getGenreNames } from "../utils";
 import { useQuery } from "react-query";
 import { Link } from "react-router-dom";
 

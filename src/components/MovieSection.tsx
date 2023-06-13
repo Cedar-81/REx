@@ -1,5 +1,5 @@
 import { useQuery } from "react-query";
-import { carouselSettings, fetchMovies, Movie } from "../utils";
+import { carouselSettings, fetchMovies } from "../utils";
 import { MovieCard } from ".";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
