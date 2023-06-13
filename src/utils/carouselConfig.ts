@@ -45,12 +45,6 @@ export const carouselSettings = {
         slidesToShow: 4.9,
       },
     },
-    {
-      breakpoint: 1920,
-      settings: {
-        slidesToShow: 6,
-      },
-    },
   ],
 };
 
