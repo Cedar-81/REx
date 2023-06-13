@@ -1,8 +1,14 @@
 import { Section, nav_list } from "../utils";
 import { NavItem } from ".";
-import { useState } from "react";
+import { Dispatch, SetStateAction, useState } from "react";
+import { IoClose } from "react-icons/io5";
 
-const Nav = () => {
+type NavType = {
+  show: boolean;
+  setShow: Dispatch<SetStateAction<boolean>>;
+};
+
+const Nav = ({ show, setShow }: NavType) => {
   const [navList, setNavList] = useState(nav_list);
 
   const handleActive = (itemIndex: number) => {
@@ -18,8 +24,14 @@ const Nav = () => {
   };
 
   return (
-    <nav className="w-full h-full space-y-10">
-      <p className="font-bold text-xl text-red-700 px-9 pt-8">REx</p>
+    <nav className="fixed w-[50vw] top-0 left-0 bg-zinc-900 lg:static z-30 lg:w-full h-full space-y-10">
+      <div className="flex justify-between items-center pl-9 pr-4 pt-8">
+        <p className="font-bold text-xl text-red-700">REx</p>
+        <IoClose
+          onClick={() => setShow(!show)}
+          className="h-5 w-5 !text-white hover:text-red-700"
+        />
+      </div>
       <section className="space-y-4">
         <p className="text-sm pl-9">YOUR FEED</p>
         {navList.map((item, index) => {
@@ -30,6 +42,8 @@ const Nav = () => {
                   handleActive={handleActive}
                   index={index}
                   content={item}
+                  show={show}
+                  setShow={setShow}
                 />
               </ul>
             );
@@ -46,6 +60,8 @@ const Nav = () => {
                   handleActive={handleActive}
                   content={item}
                   index={index}
+                  show={show}
+                  setShow={setShow}
                 />
               </ul>
             );
@@ -63,6 +79,8 @@ const Nav = () => {
                   handleActive={handleActive}
                   content={item}
                   index={index}
+                  show={show}
+                  setShow={setShow}
                 />
               </ul>
             );

@@ -1,6 +1,6 @@
 function WPartyCard() {
   return (
-    <div className="w-[15rem] cursor-pointer p-4 space-y-4 bg-zinc-800 hover:border hover:border-red-900/25 border border-transparent transition-all rounded-2xl">
+    <div className="min-w-[15rem] cursor-pointer p-4 space-y-4 bg-zinc-800 hover:border hover:border-red-900/25 border border-transparent transition-all rounded-2xl">
       <div className="flex justify-between items-baseline">
         <div className="overflow-hidden w-14 h-8 relative rounded-md">
           <img

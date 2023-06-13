@@ -4,7 +4,7 @@ function WatchParty() {
   return (
     <section className="space-y-6">
       <h2 className="text-xl text-white text-semibold">Parties</h2>
-      <div className="flex space-x-6">
+      <div className="flex space-x-6 overflow-y-auto">
         <WPartyCard />
         <WPartyCard />
         <WPartyCard />

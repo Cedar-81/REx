@@ -1,13 +1,15 @@
 import { Route, Routes } from "react-router-dom";
-import { Browse } from ".";
+import { Browse, MoviePage, Movies, Search, Shows } from ".";
 
 const MainContent = () => {
   return (
     <Routes>
       <Route path="/" element={<Browse />} />
-      <Route path="/about" element={<></>} />
-      <Route path="/services" element={<></>} />
-      <Route path="/contact" element={<></>} />
+      <Route path="/browse" element={<Browse />} />
+      <Route path="/search/:query" element={<Search />} />
+      <Route path="/:type/:id/:title" element={<MoviePage />} />
+      <Route path="/movies" element={<Movies />} />
+      <Route path="/shows" element={<Shows />} />
     </Routes>
   );
 };

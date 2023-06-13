@@ -4,8 +4,40 @@ export const carouselSettings = {
   dots: false,
   infinite: true,
   speed: 3000,
+  autoplaySpeed: 6000,
   autoplay: true,
-  slidesToShow: 4.9,
+  slidesToScroll: 1,
+  responsive: [
+    {
+      breakpoint: 1024,
+      settings: {
+        slidesToShow: 4.9,
+      },
+    },
+    {
+      breakpoint: 768,
+      settings: {
+        slidesToShow: 2.8,
+      },
+    },
+    {
+      breakpoint: 480,
+      settings: {
+        slidesToShow: 1.8,
+      },
+    },
+  ],
+};
+
+export const bannerCarouselSettings = {
+  className: "w-full",
+  arrows: false,
+  dots: false,
+  infinite: true,
+  speed: 3000,
+  autoplaySpeed: 8000,
+  autoplay: true,
+  slidesToShow: 1,
   slidesToScroll: 1,
   //   dots: false,
   //   infinite: true,

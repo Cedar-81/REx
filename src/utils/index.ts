@@ -1,8 +1,16 @@
 import { nav_list, Section, NavListType, Content } from "./navlist";
-import { fetchMovies } from "./fetchMovies";
 import browseSections from "./browseList";
-import { carouselSettings } from "./carouselConfig";
+import { carouselSettings, bannerCarouselSettings } from "./carouselConfig";
 import Movie from "./tmdbType";
+import {
+  fetchMovies,
+  getGenreNames,
+  fetchGenres,
+  getLatestTVSeriesAndMovies,
+  searchMovies,
+  getMovieDetails,
+  getMovieTrailers,
+} from "./fetchMovies";
 
 export {
   nav_list,
@@ -10,6 +18,13 @@ export {
   browseSections,
   Section,
   carouselSettings,
+  bannerCarouselSettings,
+  getGenreNames,
+  fetchGenres,
+  getLatestTVSeriesAndMovies,
+  searchMovies,
+  getMovieDetails,
+  getMovieTrailers,
   type Movie,
   type NavListType,
   type Content,

@@ -1,13 +1,13 @@
 import { Banner, MovieSectionList, WatchParty } from ".";
 
-function Browse() {
+function Movies() {
   return (
     <div className="space-y-10">
-      <Banner type="all" />
+      <Banner type="movie" />
       <WatchParty />
-      <MovieSectionList type="all" />
+      <MovieSectionList type="movie" />
     </div>
   );
 }
 
-export default Browse;
+export default Movies;

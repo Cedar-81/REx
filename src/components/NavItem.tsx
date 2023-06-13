@@ -1,14 +1,23 @@
 import { Link } from "react-router-dom";
 import classNames from "classnames";
 import { Content } from "../utils";
+import { Dispatch, SetStateAction } from "react";
 
 type NavItemType = {
   content: Content;
   index: number;
+  show: boolean;
+  setShow: Dispatch<SetStateAction<boolean>>;
   handleActive: (index: number) => void;
 };
 
-const NavItem = ({ content, index, handleActive }: NavItemType) => {
+const NavItem = ({
+  content,
+  index,
+  handleActive,
+  show,
+  setShow,
+}: NavItemType) => {
   const Icon = content.active ? content.icon_active : content.icon_inactive;
 
   return (
@@ -21,6 +30,7 @@ const NavItem = ({ content, index, handleActive }: NavItemType) => {
       <div
         onClick={() => {
           handleActive(index);
+          setShow(!show);
         }}
         className="flex transition-all space-x-3 items-center"
       >

@@ -24,8 +24,6 @@ function MovieSection({ sectionTitle }: MovieSectionType) {
     fetchMovies(`${type}/${filter}`)
   );
 
-  console.log(filter, data);
-
   if (isLoading) {
     return <section>Loading...</section>;
   }
@@ -41,11 +39,8 @@ function MovieSection({ sectionTitle }: MovieSectionType) {
       <div className="flex justify-between">
         <Slider {...carouselSettings}>
           {data.map((movie: any) => (
-            <MovieCard key={movie.id} data={movie} />
+            <MovieCard type={type} key={movie.id} data={movie} />
           ))}
-          {/* <MovieCard title="first movie" />
-          <MovieCard title="first movie" />
-          <MovieCard title="first movie" /> */}
         </Slider>
       </div>
     </section>

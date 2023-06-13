@@ -1,9 +1,25 @@
-import { useState } from "react";
+import { Dispatch, SetStateAction, useState } from "react";
 import { IoMdNotificationsOutline, IoMdNotifications } from "react-icons/io";
 import { IoSearchOutline } from "react-icons/io5";
+import { useNavigate } from "react-router-dom";
+import { HiMenuAlt3 } from "react-icons/hi";
 
-const TopNav = () => {
+type TopNavType = {
+  show: boolean;
+  setShow: Dispatch<SetStateAction<boolean>>;
+};
+
+const TopNav = ({ setShow, show }: TopNavType) => {
   const [active, setActive] = useState(false);
+
+  const navigate = useNavigate();
+
+  const handleKeyPress = (event: any) => {
+    if (event.key === "Enter" && event.target.value.trim() !== "") {
+      const query = event.target.value;
+      navigate(`/search/${query}`);
+    }
+  };
 
   return (
     <nav className="text-gray-300/50 py-6">
@@ -13,10 +29,15 @@ const TopNav = () => {
           <input
             className="appearance-none focus:placeholder:text-white/60 placeholder:text-gray-300/50 bg-transparent focus:outline-none focus-within:text-white/60 h-full"
             type="text"
+            onKeyUp={handleKeyPress}
             placeholder="Search movies..."
           />
         </div>
-        <div className="flex items-center space-x-3">
+        <HiMenuAlt3
+          onClick={() => setShow(!show)}
+          className="lg:hidden block h-8 w-8 text-white/60"
+        />
+        <div className="items-center space-x-3 hidden lg:flex">
           {!active && (
             <IoMdNotificationsOutline
               onClick={() => setActive((prev) => !prev)}
@@ -30,7 +51,7 @@ const TopNav = () => {
             />
           )}
 
-          <div className="h-9 w-9 rounded-full overflow-hidden">
+          <div className="h-9 w-9 hidden lg:block rounded-full overflow-hidden">
             <img
               className="h-full w-full object-cover"
               src="https://images.pexels.com/photos/17045026/pexels-photo-17045026/free-photo-of-fashion-people-woman-relaxation.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
