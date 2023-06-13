@@ -18,7 +18,7 @@ export const carouselSettings = {
     {
       breakpoint: 480,
       settings: {
-        slidesToShow: 1.8,
+        slidesToShow: 1.6,
       },
     },
     {
