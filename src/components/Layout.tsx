@@ -9,9 +9,10 @@ const TwoColumnLayout = () => {
   return (
     <div className="flex h-full text-gray-300 bg-zinc-900">
       <div
-        className={classNames("w-1/6 border-r-2 border-gray-500/25", {
-          hidden: !showNav,
-        })}
+        className={classNames(
+          { hidden: !showNav },
+          "fixed w-[50vw] h-full top-0 left-0 bg-zinc-900 lg:static z-30 lg:w-1/6 border-r-2 border-gray-500/25 lg:block"
+        )}
       >
         <Nav show={showNav} setShow={setShowNav} />
       </div>

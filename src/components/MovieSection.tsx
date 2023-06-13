@@ -1,7 +1,6 @@
 import { useQuery } from "react-query";
-import { carouselSettings, fetchMovies } from "../utils";
-import { MovieCard } from ".";
-import Slider from "react-slick";
+import { fetchMovies } from "../utils";
+import { MovieCard, SliderWrapper } from ".";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
@@ -37,11 +36,11 @@ function MovieSection({ sectionTitle }: MovieSectionType) {
       <h2 className="text-xl text-white text-semibold">{sectionTitle}</h2>
       {/* <MovieCard /> */}
       <div className="flex justify-between">
-        <Slider {...carouselSettings}>
+        <SliderWrapper>
           {data.map((movie: any) => (
             <MovieCard type={type} key={movie.id} data={movie} />
           ))}
-        </Slider>
+        </SliderWrapper>
       </div>
     </section>
   );

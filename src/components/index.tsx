@@ -16,6 +16,7 @@ import MovieMedia from "./MovieMedia";
 import MovieDetails from "./MovieDetails";
 import Movies from "./Movies";
 import Shows from "./Shows";
+import SliderWrapper from "./SliderWrapper";
 
 export {
   Layout,
@@ -36,4 +37,5 @@ export {
   MovieDetails,
   Movies,
   Shows,
+  SliderWrapper,
 };

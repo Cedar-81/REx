@@ -6,24 +6,43 @@ export const carouselSettings = {
   speed: 3000,
   autoplaySpeed: 6000,
   autoplay: true,
+  slidesToShow: 4.9,
   slidesToScroll: 1,
   responsive: [
     {
-      breakpoint: 1024,
+      breakpoint: 280,
       settings: {
-        slidesToShow: 4.9,
-      },
-    },
-    {
-      breakpoint: 768,
-      settings: {
-        slidesToShow: 2.8,
+        slidesToShow: 1.3,
       },
     },
     {
       breakpoint: 480,
       settings: {
         slidesToShow: 1.8,
+      },
+    },
+    {
+      breakpoint: 600,
+      settings: {
+        slidesToShow: 2.5,
+      },
+    },
+    {
+      breakpoint: 820,
+      settings: {
+        slidesToShow: 3.5,
+      },
+    },
+    {
+      breakpoint: 912,
+      settings: {
+        slidesToShow: 4,
+      },
+    },
+    {
+      breakpoint: 1024,
+      settings: {
+        slidesToShow: 4.9,
       },
     },
   ],

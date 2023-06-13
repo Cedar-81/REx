@@ -24,12 +24,12 @@ const Nav = ({ show, setShow }: NavType) => {
   };
 
   return (
-    <nav className="fixed w-[50vw] top-0 left-0 bg-zinc-900 lg:static z-30 lg:w-full h-full space-y-10">
+    <nav className="lg:w-full h-full space-y-10">
       <div className="flex justify-between items-center pl-9 pr-4 pt-8">
         <p className="font-bold text-xl text-red-700">REx</p>
         <IoClose
           onClick={() => setShow(!show)}
-          className="h-5 w-5 !text-white hover:text-red-700"
+          className="lg:hidden h-5 w-5 !text-white hover:text-red-700"
         />
       </div>
       <section className="space-y-4">
