@@ -16,7 +16,7 @@ const TwoColumnLayout = () => {
       >
         <Nav show={showNav} setShow={setShowNav} />
       </div>
-      <div className="overflow-y-auto px-2 w-full sm:hover:text-red-700 lg:w-5/6 lg:px-9 ">
+      <div className="overflow-y-auto px-2 w-full lg:w-5/6 lg:px-9 ">
         <TopNav show={showNav} setShow={setShowNav} />
         <Contents />
       </div>

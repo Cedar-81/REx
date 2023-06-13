@@ -8,7 +8,7 @@ type BannerContentType = {
 };
 
 const BannerContent = ({ data }: BannerContentType) => {
-  const { data: genres } = useQuery("genres");
+  const { data: genres } = useQuery("genres", () => {});
   const movie_genres = getGenreNames(data.genre_ids, genres);
   let genre_string: string = movie_genres.map((genre) => `#${genre}`).join(" ");
   let title = data.name
